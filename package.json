@@ -1,14 +1,13 @@
 {
-  "name": "@soketi/soketi",
-  "version": "0.0.0-dev",
+  "name": "@integraflow/sync-server",
+  "version": "0.0.1",
   "description": "Just another simple, fast, and resilient open-source WebSockets server.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/soketi/soketi.git"
+    "url": "https://github.com/IntegraflowHQ/sync-server.git"
   },
   "main": "dist/index.js",
   "keywords": [
-    "laravel",
     "socket.io",
     "broadcasting",
     "events",
@@ -16,7 +15,7 @@
     "socket",
     "pusher"
   ],
-  "author": "Alex Renoki",
+  "author": "IntegraflowHQ",
   "license": "AGPL-3.0",
   "jshintConfig": {
     "esversion": 9
