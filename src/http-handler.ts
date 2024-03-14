@@ -363,7 +363,7 @@ export class HttpHandler {
             let payloadSizeInKb = Utils.dataToKilobytes(message.data);
 
             // Make sure the total payload of the message body is not too big.
-            if (payloadSizeInKb > parseFloat(app.maxEventPayloadInKb as string)) {
+            if (payloadSizeInKb > app.maxEventPayloadInKb) {
                 return reject({
                     message: `The event data should be less than ${app.maxEventPayloadInKb} KB.`,
                     code: 413,

@@ -7,11 +7,11 @@ interface Redis {
     host: string;
     port: number;
     db: number;
-    username: string|null;
-    password: string|null;
+    username: string | null;
+    password: string | null;
     keyPrefix: string;
     sentinels: RedisSentinel[];
-    sentinelPassword: string|null;
+    sentinelPassword: string | null;
     name: string;
     clusterNodes: ClusterNode[];
 }
@@ -52,10 +52,10 @@ export interface Options {
             prefix: string;
             servers: string[];
             user?: string;
-            pass?: string|null;
-            token: string|null;
+            pass?: string | null;
+            token: string | null;
             timeout: number;
-            nodesNumber: number|null;
+            nodesNumber: number | null;
         };
     };
     appManager: {
@@ -74,18 +74,18 @@ export interface Options {
         };
         mysql: {
             table: string;
-            version: string|number;
+            version: string | number;
             useMysql2: boolean;
         };
         postgres: {
             table: string;
-            version: string|number;
+            version: string | number;
         };
     };
     cache: {
         driver: string;
         redis: {
-            redisOptions: RedisOptions|ClusterOptions;
+            redisOptions: RedisOptions | ClusterOptions;
             clusterMode: boolean;
         };
     };
@@ -103,8 +103,8 @@ export interface Options {
         prefix: string;
         ignoreProcess: boolean;
         broadcast: string;
-        unicast: string|null;
-        multicast: string|null;
+        unicast: string | null;
+        multicast: string | null;
     };
     cors: {
         credentials: boolean;
@@ -124,20 +124,20 @@ export interface Options {
     };
     debug: boolean;
     eventLimits: {
-        maxChannelsAtOnce: string|number;
-        maxNameLength: string|number;
-        maxPayloadInKb: string|number;
-        maxBatchSize: string|number;
+        maxChannelsAtOnce: string | number;
+        maxNameLength: string | number;
+        maxPayloadInKb: string | number;
+        maxBatchSize: string | number;
     };
     host: string;
     httpApi: {
-        requestLimitInMb: string|number;
+        requestLimitInMb: number;
         acceptTraffic: {
             memoryThreshold: number;
         };
     };
     instance: {
-        process_id: string|number;
+        process_id: string | number;
     };
     metrics: {
         enabled: boolean;
@@ -152,14 +152,14 @@ export interface Options {
     port: number;
     pathPrefix: string;
     presence: {
-        maxMembersPerChannel: string|number;
-        maxMemberSizeInKb: string|number;
+        maxMembersPerChannel: string | number;
+        maxMemberSizeInKb: string | number;
     };
     queue: {
         driver: string;
         redis: {
             concurrency: number;
-            redisOptions: RedisOptions|ClusterOptions;
+            redisOptions: RedisOptions | ClusterOptions;
             clusterMode: boolean;
         };
         sqs: {
@@ -176,7 +176,7 @@ export interface Options {
     rateLimiter: {
         driver: string;
         redis: {
-            redisOptions: RedisOptions|ClusterOptions;
+            redisOptions: RedisOptions | ClusterOptions;
             clusterMode: boolean;
         };
     };

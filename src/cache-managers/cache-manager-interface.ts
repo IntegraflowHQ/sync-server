@@ -9,7 +9,7 @@ export interface CacheManagerInterface {
     /**
      * The Redis connection.
      */
-    redisConnection?: Redis|Cluster;
+    redisConnection?: Redis | Cluster;
 
     /**
      * Check if the given key exists in cache.

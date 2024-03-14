@@ -14,7 +14,7 @@ export interface PusherMessage {
 
 export interface PusherApiMessage {
     name?: string;
-    data?: string|{ [key: string]: any };
+    data?: string | { [key: string]: any };
     channel?: string;
     channels?: string[];
     socket_id?: string;
@@ -23,7 +23,7 @@ export interface PusherApiMessage {
 export interface SentPusherMessage {
     channel?: string;
     event?: string;
-    data?: MessageData|string;
+    data?: MessageData | string;
 }
 
-export type uWebSocketMessage = ArrayBuffer|PusherMessage;
+export type uWebSocketMessage = ArrayBuffer | PusherMessage;

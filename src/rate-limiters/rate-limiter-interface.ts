@@ -4,7 +4,7 @@ import { WebSocket } from 'uWebSockets.js';
 
 export interface ConsumptionResponse {
     canContinue: boolean;
-    rateLimiterRes: RateLimiterRes|null;
+    rateLimiterRes: RateLimiterRes | null;
     headers: {
         'Retry-After'?: number;
         'X-RateLimit-Limit'?: number;

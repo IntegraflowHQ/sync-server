@@ -185,7 +185,7 @@ export class Server {
             process_id: process.pid || uuidv4(),
         },
         metrics: {
-            enabled: false,
+            enabled: true,
             driver: 'prometheus',
             host: '0.0.0.0',
             prometheus: {

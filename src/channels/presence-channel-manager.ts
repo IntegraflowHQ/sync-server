@@ -10,7 +10,7 @@ export interface PresenceMemberInfo {
 }
 
 export interface PresenceMember {
-    user_id: number|string;
+    user_id: number | string;
     user_info: PresenceMemberInfo;
     socket_id?: string;
 }

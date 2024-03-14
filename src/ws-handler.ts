@@ -711,7 +711,7 @@ export class WsHandler {
      * Get the channel manager for the given channel name,
      * respecting the Pusher protocol.
      */
-    getChannelManagerFor(channel: string): PublicChannelManager|PrivateChannelManager|EncryptedPrivateChannelManager|PresenceChannelManager {
+    getChannelManagerFor(channel: string): PublicChannelManager | PrivateChannelManager | EncryptedPrivateChannelManager | PresenceChannelManager {
         if (Utils.isPresenceChannel(channel)) {
             return this.presenceChannelManager;
         } else if (Utils.isEncryptedPrivateChannel(channel)) {
@@ -726,7 +726,7 @@ export class WsHandler {
     /**
      * Use the app manager to retrieve a valid app.
      */
-    protected checkForValidApp(ws: WebSocket): Promise<App|null> {
+    protected checkForValidApp(ws: WebSocket): Promise<App | null> {
         return this.server.appManager.findByKey(ws.appKey);
     }
 

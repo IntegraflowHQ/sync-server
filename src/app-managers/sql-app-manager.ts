@@ -42,7 +42,7 @@ export abstract class SqlAppManager extends BaseAppManager {
     /**
      * Find an app by given ID.
      */
-    findById(id: string): Promise<App|null> {
+    findById(id: string): Promise<App | null> {
         return this.selectById(id).then(apps => {
             if (apps.length === 0) {
                 if (this.server.options.debug) {
@@ -59,7 +59,7 @@ export abstract class SqlAppManager extends BaseAppManager {
     /**
      * Find an app by given key.
      */
-    findByKey(key: string): Promise<App|null> {
+    findByKey(key: string): Promise<App | null> {
         return this.selectByKey(key).then(apps => {
             if (apps.length === 0) {
                 if (this.server.options.debug) {

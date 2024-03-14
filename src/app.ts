@@ -9,20 +9,20 @@ export interface AppInterface {
     id: string;
     key: string;
     secret: string;
-    maxConnections: string|number;
+    maxConnections: string | number;
     enableClientMessages: boolean;
     enabled: boolean;
-    maxBackendEventsPerSecond?: string|number;
-    maxClientEventsPerSecond: string|number;
-    maxReadRequestsPerSecond?: string|number;
+    maxBackendEventsPerSecond?: string | number;
+    maxClientEventsPerSecond: string | number;
+    maxReadRequestsPerSecond?: string | number;
     webhooks?: WebhookInterface[];
-    maxPresenceMembersPerChannel?: string|number;
-    maxPresenceMemberSizeInKb?: string|number;
+    maxPresenceMembersPerChannel?: string | number;
+    maxPresenceMemberSizeInKb?: string | number;
     maxChannelNameLength?: number;
-    maxEventChannelsAtOnce?: string|number;
-    maxEventNameLength?: string|number;
-    maxEventPayloadInKb?: string|number;
-    maxEventBatchSize?: string|number;
+    maxEventChannelsAtOnce?: string | number;
+    maxEventNameLength?: string | number;
+    maxEventPayloadInKb?: string | number;
+    maxEventBatchSize?: string | number;
     enableUserAuthentication?: boolean;
     hasClientEventWebhooks?: boolean;
     hasChannelOccupiedWebhooks?: boolean;
@@ -68,7 +68,7 @@ export class App implements AppInterface {
     /**
      * @type {number}
      */
-    public maxConnections: string|number;
+    public maxConnections: string | number;
 
     /**
      * @type {boolean}
@@ -83,17 +83,17 @@ export class App implements AppInterface {
     /**
      * @type {number}
      */
-    public maxBackendEventsPerSecond: string|number;
+    public maxBackendEventsPerSecond: string | number;
 
     /**
      * @type {number}
      */
-    public maxClientEventsPerSecond: string|number;
+    public maxClientEventsPerSecond: string | number;
 
     /**
      * @type {number}
      */
-    public maxReadRequestsPerSecond: string|number;
+    public maxReadRequestsPerSecond: string | number;
 
     /**
      * @type {WebhookInterface[]}
@@ -103,12 +103,12 @@ export class App implements AppInterface {
     /**
      * @type {string|number}
      */
-    public maxPresenceMembersPerChannel: string|number;
+    public maxPresenceMembersPerChannel: string | number;
 
     /**
      * @type {string|number}
      */
-    public maxPresenceMemberSizeInKb: string|number;
+    public maxPresenceMemberSizeInKb: string | number;
 
     /**
      * @type {number}
@@ -116,24 +116,24 @@ export class App implements AppInterface {
     public maxChannelNameLength: number;
 
     /**
-     * @type {string|number}
+     * @type {number}
      */
-    public maxEventChannelsAtOnce: string|number;
+    public maxEventChannelsAtOnce: number;
 
     /**
-     * @type {string|number}
+     * @type {number}
      */
-    public maxEventNameLength: string|number;
+    public maxEventNameLength: number;
 
     /**
-     * @type {string|number}
+     * @type {number}
      */
-    public maxEventPayloadInKb: string|number;
+    public maxEventPayloadInKb: number;
 
     /**
-     * @type {string|number}
+     * @type {number}
      */
-    public maxEventBatchSize: string|number;
+    public maxEventBatchSize: number;
 
     /**
      * @type {boolean}

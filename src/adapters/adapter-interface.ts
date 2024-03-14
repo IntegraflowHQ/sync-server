@@ -50,17 +50,17 @@ export interface AdapterInterface {
      * Remove a socket ID from the channel identifier.
      * Return the total number of connections remaining to the channel.
      */
-    removeFromChannel(appId: string, channel: string|string[], wsId: string): Promise<number|void>;
+    removeFromChannel(appId: string, channel: string | string[], wsId: string): Promise<number | void>;
 
     /**
      * Send a message to a namespace and channel.
      */
-    send(appId: string, channel: string, data: string, exceptingId?: string|null): any;
+    send(appId: string, channel: string, data: string, exceptingId?: string | null): any;
 
     /**
      * Terminate an User ID's connections.
      */
-    terminateUserConnections(appId: string, userId: number|string): void;
+    terminateUserConnections(appId: string, userId: number | string): void;
 
     /**
      * Clear the connection for the adapter.
@@ -135,5 +135,5 @@ export interface AdapterInterface {
     /**
      * Get the sockets associated with an user.
      */
-    getUserSockets(appId: string, userId: string|number): Promise<Set<WebSocket>>;
+    getUserSockets(appId: string, userId: string | number): Promise<Set<WebSocket>>;
 }

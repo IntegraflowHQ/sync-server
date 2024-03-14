@@ -45,7 +45,7 @@ export class RedisQueueDriver implements QueueInterface {
     processQueue(queueName: string, callback: CallableFunction): Promise<void> {
         return new Promise(resolve => {
             if (!this.queueWithWorker.has(queueName)) {
-                let redisOptions: RedisOptions|ClusterOptions = {
+                let redisOptions: RedisOptions | ClusterOptions = {
                     maxRetriesPerRequest: null,
                     enableReadyCheck: false,
                     ...this.server.options.database.redis,

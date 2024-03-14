@@ -70,7 +70,7 @@ export interface PubsubBroadcastedMessage {
     appId: string;
     channel: string;
     data: any;
-    exceptingId?: string|null;
+    exceptingId?: string | null;
 }
 
 export abstract class HorizontalAdapter extends LocalAdapter {
@@ -252,7 +252,7 @@ export abstract class HorizontalAdapter extends LocalAdapter {
     /**
      * Send a message to a namespace and channel.
      */
-    send(appId: string, channel: string, data: string, exceptingId: string|null = null): any {
+    send(appId: string, channel: string, data: string, exceptingId: string | null = null): any {
         this.broadcastToChannel(this.channel, JSON.stringify({
             uuid: this.uuid,
             appId,
@@ -267,14 +267,14 @@ export abstract class HorizontalAdapter extends LocalAdapter {
     /**
      * Force local sending only for the Horizontal adapter.
      */
-    sendLocally(appId: string, channel: string, data: string, exceptingId: string|null = null): any {
+    sendLocally(appId: string, channel: string, data: string, exceptingId: string | null = null): any {
         super.send(appId, channel, data, exceptingId);
     }
 
     /**
      * Terminate an User ID's connections.
      */
-    terminateUserConnections(appId: string, userId: number|string): void {
+    terminateUserConnections(appId: string, userId: number | string): void {
         new Promise((resolve, reject) => {
             this.getNumSub().then(numSub => {
                 if (numSub <= 1) {
@@ -300,7 +300,7 @@ export abstract class HorizontalAdapter extends LocalAdapter {
     /**
      * Terminate an User ID's local connections.
      */
-    terminateLocalUserConnections(appId: string, userId: number|string): void {
+    terminateLocalUserConnections(appId: string, userId: number | string): void {
         super.terminateUserConnections(appId, userId);
     }
 

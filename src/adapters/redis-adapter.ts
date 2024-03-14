@@ -13,12 +13,12 @@ export class RedisAdapter extends HorizontalAdapter {
     /**
      * The subscription client.
      */
-    protected subClient: Redis|Cluster;
+    protected subClient: Redis | Cluster;
 
     /**
      * The publishing client.
      */
-    protected pubClient: Redis|Cluster;
+    protected pubClient: Redis | Cluster;
 
     /**
      * Initialize the adapter.
@@ -40,7 +40,7 @@ export class RedisAdapter extends HorizontalAdapter {
      * Initialize the adapter.
      */
     async init(): Promise<AdapterInterface> {
-        let redisOptions: RedisOptions|ClusterOptions = {
+        const redisOptions: RedisOptions | ClusterOptions = {
             maxRetriesPerRequest: 2,
             retryStrategy: times => times * 2,
             ...this.server.options.database.redis,
@@ -83,7 +83,7 @@ export class RedisAdapter extends HorizontalAdapter {
     /**
      * Process the incoming message and redirect it to the right processor.
      */
-    protected processMessage(redisChannel: string, msg: Buffer|string): void {
+    protected processMessage(redisChannel: string, msg: Buffer | string): void {
         redisChannel = redisChannel.toString();
         msg = msg.toString();
 
@@ -98,7 +98,7 @@ export class RedisAdapter extends HorizontalAdapter {
      * Listen for message coming from other nodes to broadcast
      * a specific message to the local sockets.
      */
-    protected onMessage(pattern: string, redisChannel: string, msg: Buffer|string): void {
+    protected onMessage(pattern: string, redisChannel: string, msg: Buffer | string): void {
         redisChannel = redisChannel.toString();
         msg = msg.toString();
 
@@ -172,12 +172,10 @@ export class RedisAdapter extends HorizontalAdapter {
     /**
      * Clear the connections.
      */
-    disconnect(): Promise<void> {
-        return Promise.all([
+    async disconnect(): Promise<void> {
+        await Promise.all([
             this.subClient.quit(),
             this.pubClient.quit(),
-        ]).then(() => {
-            //
-        });
+        ]);
     }
 }

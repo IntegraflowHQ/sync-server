@@ -28,7 +28,7 @@ export class DynamoDbAppManager extends BaseAppManager {
     /**
      * Find an app by given ID.
      */
-    findById(id: string): Promise<App|null> {
+    findById(id: string): Promise<App | null> {
         return this.dynamodb.getItem({
             TableName: this.server.options.appManager.dynamodb.table,
             Key: {
@@ -59,7 +59,7 @@ export class DynamoDbAppManager extends BaseAppManager {
     /**
      * Find an app by given key.
      */
-    findByKey(key: string): Promise<App|null> {
+    findByKey(key: string): Promise<App | null> {
         return this.dynamodb.query({
             TableName: this.server.options.appManager.dynamodb.table,
             IndexName: 'AppKeyIndex',

@@ -36,7 +36,7 @@ export class AppManager implements AppManagerInterface {
     /**
      * Find an app by given ID.
      */
-    findById(id: string): Promise<App|null> {
+    findById(id: string): Promise<App | null> {
         if (!this.server.options.appManager.cache.enabled) {
             return this.driver.findById(id);
         }
@@ -57,7 +57,7 @@ export class AppManager implements AppManagerInterface {
     /**
      * Find an app by given key.
      */
-    findByKey(key: string): Promise<App|null> {
+    findByKey(key: string): Promise<App | null> {
         if (!this.server.options.appManager.cache.enabled) {
             return this.driver.findByKey(key);
         }
@@ -78,7 +78,7 @@ export class AppManager implements AppManagerInterface {
     /**
      * Get the app secret by ID.
      */
-    getAppSecret(id: string): Promise<string|null> {
+    getAppSecret(id: string): Promise<string | null> {
         return this.driver.getAppSecret(id);
     }
 }

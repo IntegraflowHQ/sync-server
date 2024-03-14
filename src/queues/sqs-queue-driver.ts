@@ -86,7 +86,7 @@ export class SqsQueueDriver implements QueueInterface {
                     return Promise.all(messages.map(({ Body }) => handleMessage({ Body }))).then(() => {
                         //
                     });
-            };
+                };
             } else {
                 consumerOptions.handleMessage = handleMessage;
             }

@@ -9,7 +9,7 @@ export class Utils {
     ];
 
     /**
-     * Channels and patters for private channels.
+     * Channels and patterns for private channels.
      *
      * @type {string[]}
      */
@@ -20,7 +20,7 @@ export class Utils {
     ];
 
     /**
-     * Channels with patters for caching channels.
+     * Channels with patterns for caching channels.
      *
      * @type {string[]}
      */

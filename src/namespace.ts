@@ -15,7 +15,7 @@ export class Namespace {
     /**
      * The list of user IDs and their associated socket ids.
      */
-    public users: Map<number|string, Set<string>> = new Map();
+    public users: Map<number | string, Set<string>> = new Map();
 
     /**
      * Initialize the namespace for an app.
@@ -70,7 +70,7 @@ export class Namespace {
      * Remove a socket ID from the channel identifier.
      * Return the total number of connections remaining to the channel.
      */
-    async removeFromChannel(wsId: string, channel: string|string[]): Promise<number|void> {
+    async removeFromChannel(wsId: string, channel: string | string[]): Promise<number | void> {
         let remove = (channel) => {
             if (this.channels.has(channel)) {
                 this.channels.get(channel).delete(wsId);
@@ -172,7 +172,7 @@ export class Namespace {
     /**
      * Terminate the user's connections.
      */
-    terminateUserConnections(userId: number|string): void {
+    terminateUserConnections(userId: number | string): void {
         this.getSockets().then(sockets => {
             [...sockets].forEach(([wsId, ws]) => {
                 if (ws.user && ws.user.id == userId) {
@@ -235,7 +235,7 @@ export class Namespace {
     /**
      * Get the sockets associated with an user.
      */
-    getUserSockets(userId: string|number): Promise<Set<WebSocket>> {
+    getUserSockets(userId: string | number): Promise<Set<WebSocket>> {
         let wsIds = this.users.get(userId);
 
         if (!wsIds || wsIds.size === 0) {

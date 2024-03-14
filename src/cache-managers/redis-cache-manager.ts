@@ -6,13 +6,13 @@ export class RedisCacheManager implements CacheManagerInterface {
     /**
      * The Redis connection.
      */
-    public redisConnection: Redis|Cluster;
+    public redisConnection: Redis | Cluster;
 
     /**
      * Create a new Redis cache instance.
      */
     constructor(protected server: Server) {
-        let redisOptions: RedisOptions|ClusterOptions = {
+        let redisOptions: RedisOptions | ClusterOptions = {
             ...server.options.database.redis,
             ...server.options.cache.redis.redisOptions,
         };

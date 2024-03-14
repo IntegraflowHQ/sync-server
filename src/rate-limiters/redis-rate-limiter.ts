@@ -7,7 +7,7 @@ export class RedisRateLimiter extends LocalRateLimiter {
     /**
      * The Redis connection.
      */
-    protected redisConnection: Redis|Cluster;
+    protected redisConnection: Redis | Cluster;
 
     /**
      * Initialize the Redis rate limiter driver.
@@ -15,7 +15,7 @@ export class RedisRateLimiter extends LocalRateLimiter {
     constructor(protected server: Server) {
         super(server);
 
-        let redisOptions: ClusterOptions|RedisOptions = {
+        let redisOptions: ClusterOptions | RedisOptions = {
             ...server.options.database.redis,
             ...server.options.rateLimiter.redis.redisOptions,
         };

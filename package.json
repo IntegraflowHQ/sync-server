@@ -82,7 +82,8 @@
     "prepublish": "npm run build",
     "test": "jest --detectOpenHandles --forceExit --silent",
     "test:local": "jest --detectOpenHandles --forceExit --verbose",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "start": "node ./bin/server.js start"
   },
   "bin": {
     "soketi": "bin/server.js",

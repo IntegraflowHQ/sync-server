@@ -30,17 +30,17 @@ export class CacheManager implements CacheManagerInterface {
         return this.driver.has(key);
     }
 
-     /**
-      * Check if the given key exists in cache.
-      * Returns false-returning value if cache does not exist.
-      */
+    /**
+     * Check if the given key exists in cache.
+     * Returns false-returning value if cache does not exist.
+     */
     get(key: string): Promise<any> {
         return this.driver.get(key);
     }
 
-     /**
-      * Set or overwrite the value in the cache.
-      */
+    /**
+     * Set or overwrite the value in the cache.
+     */
     set(key: string, value: any, ttlSeconds: number): Promise<any> {
         return this.driver.set(key, value, ttlSeconds);
     }

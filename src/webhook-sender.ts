@@ -42,7 +42,7 @@ export class WebhookSender {
     /**
      * Batch of ClientEventData, to be sent as one webhook.
      */
-    public batch: ClientEventData[]  = [];
+    public batch: ClientEventData[] = [];
 
     /**
      * Whether current process has nominated batch handler.
@@ -288,7 +288,7 @@ export class WebhookSender {
     /**
      * Send a webhook for the app with the given data, without batching.
      */
-    protected sendWebhook(app: App, data: ClientEventData|ClientEventData[], queueName: string): void {
+    protected sendWebhook(app: App, data: ClientEventData | ClientEventData[], queueName: string): void {
         let events = data instanceof Array ? data : [data];
 
         if (events.length === 0) {

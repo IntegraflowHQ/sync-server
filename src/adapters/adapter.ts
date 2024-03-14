@@ -79,7 +79,7 @@ export class Adapter implements AdapterInterface {
      * Remove a socket ID from the channel identifier.
      * Return the total number of connections remaining to the channel.
      */
-    async removeFromChannel(appId: string, channel: string|string[], wsId: string): Promise<number|void> {
+    async removeFromChannel(appId: string, channel: string | string[], wsId: string): Promise<number | void> {
         return this.driver.removeFromChannel(appId, channel, wsId);
     }
 
@@ -149,14 +149,14 @@ export class Adapter implements AdapterInterface {
     /**
      * Send a message to a namespace and channel.
      */
-    send(appId: string, channel: string, data: string, exceptingId: string|null = null): void {
+    send(appId: string, channel: string, data: string, exceptingId: string | null = null): void {
         return this.driver.send(appId, channel, data, exceptingId);
     }
 
     /**
      * Terminate an User ID's connections.
      */
-    terminateUserConnections(appId: string, userId: number|string): void {
+    terminateUserConnections(appId: string, userId: number | string): void {
         return this.driver.terminateUserConnections(appId, userId);
     }
 
@@ -177,7 +177,7 @@ export class Adapter implements AdapterInterface {
     /**
      * Get the sockets associated with an user.
      */
-    getUserSockets(appId: string, userId: string|number): Promise<Set<WebSocket>> {
+    getUserSockets(appId: string, userId: string | number): Promise<Set<WebSocket>> {
         return this.driver.getUserSockets(appId, userId);
     }
 

@@ -14,7 +14,7 @@ export class ArrayAppManager extends BaseAppManager {
     /**
      * Find an app by given ID.
      */
-    findById(id: string): Promise<App|null> {
+    findById(id: string): Promise<App | null> {
         return new Promise(resolve => {
             let app = this.server.options.appManager.array.apps.find(app => app.id == id);
 
@@ -33,10 +33,9 @@ export class ArrayAppManager extends BaseAppManager {
     /**
      * Find an app by given key.
      */
-    findByKey(key: string): Promise<App|null> {
+    findByKey(key: string): Promise<App | null> {
         return new Promise(resolve => {
-            let app = this.server.options.appManager.array.apps.find(app => app.key == key);
-
+            const app = this.server.options.appManager.array.apps.find(app => app.key == key);
             if (typeof app !== 'undefined') {
                 resolve(new App(app, this.server));
             } else {
